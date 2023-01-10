@@ -1,25 +1,26 @@
 
 const Product = require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
+const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 
-exports.createProduct = async(req,res,next)=>{
+exports.createProduct = catchAsyncErrors(async(req,res,next)=>{
     const product = await Product.create(req.body);
     res.status(201).json({
         success:true,
         product
     })
-}
+});
 
-exports.getAllProducts = async(req,res)=>{
+exports.getAllProducts = catchAsyncErrors(async(req,res)=>{
 
     const products = await Product.find();
     res.status(200).json({
        success:true,
        products
     })
-}
+});
 
-exports.getProductDetails = async(req,res,next)=>{
+exports.getProductDetails = catchAsyncErrors(async(req,res,next)=>{
 
     const product = await Product.findById(req.params.id);
 
@@ -30,9 +31,9 @@ exports.getProductDetails = async(req,res,next)=>{
        success:true,
        product
     })
-}
+});
 
-exports.updateProduct = async (req,res,next)=>{
+exports.updateProduct = catchAsyncErrors(async (req,res,next)=>{
 
 let product = await Product.findById(req.params.id);
 
@@ -52,9 +53,9 @@ res.status(200).json({
     product
 })
 
-}
+});
 
-exports.deleteProduct = async (req,res,next)=>{
+exports.deleteProduct = catchAsyncErrors(async (req,res,next)=>{
 
     let product = await Product.findById(req.params.id);
     
@@ -70,4 +71,4 @@ exports.deleteProduct = async (req,res,next)=>{
       message:"Product Delete Successfull"
     })
     
-    }
+    });
