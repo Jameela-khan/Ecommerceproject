@@ -25,11 +25,11 @@ const productSchema = new mongoose.Schema({
     {
       public_id: {
         type: String,
-        required: [true,"product image is required"]
+        // required: [true,"product image is required"]
       },
       url: {
         type: String,
-        required: [true,"image url is required"]
+        // required: [true,"image url is required"]
       },
     },
   ],
