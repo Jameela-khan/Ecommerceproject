@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 
-
-const productSchema = new mongoose.Schema({
+const productSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please Enter product Name"],
     trim: true,
-    // value : '',
   },
   description: {
     type: String,
@@ -25,11 +23,11 @@ const productSchema = new mongoose.Schema({
     {
       public_id: {
         type: String,
-        // required: [true,"product image is required"]
+        required: true,
       },
       url: {
         type: String,
-        // required: [true,"image url is required"]
+        required: true,
       },
     },
   ],
@@ -52,17 +50,15 @@ const productSchema = new mongoose.Schema({
       user: {
         type: mongoose.Schema.ObjectId,
         ref: "User",
-        required: [true,"user is required"],
-        // value:'',
+        required: true,
       },
       name: {
         type: String,
-        required: [true,"Name is required"],
-        // value : '',
+        required: true,
       },
       rating: {
         type: Number,
-        required: [true, "rating is required"]
+        required: true,
       },
       comment: {
         type: String,
@@ -74,7 +70,7 @@ const productSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
-    required: [true,"user is required"]
+    required: true,
   },
   createdAt: {
     type: Date,
