@@ -5,7 +5,7 @@ import Home from "./component/Home/Home";
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import WebFont from "webfontloader";
 import React from "react";
-
+import About from "./component/layout/About/About";
 
 
 function App() {
@@ -18,9 +18,12 @@ function App() {
   },[]);
   return  <Router>
      <Header />
-  <Routes>
+        <Routes>
         <Route exact path="/"  element={< Home />} component={Home}></Route>
-        </Routes> 
+       
+        <Route exact  path="/about" element={< About />} component={About} ></Route>
+      </Routes>
+        
      <Footer />
   </Router>
 }
