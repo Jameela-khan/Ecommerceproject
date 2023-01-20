@@ -1,6 +1,9 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment} from "react";
 import "./Home.css";
+import MetaData from "../layout/MetaDeta";
+
 import ProductCard from "./ProductCard.js";
+
 
 
 const products = {
@@ -11,9 +14,11 @@ const products = {
 };
 
 const Home = () =>  {
-    
+  
     return (
         <Fragment>
+        
+              <MetaData title="ECOMMERCE APP" />
               <div className="banner">
                 <p>Welcome to Ecommerce</p>
                 <h1>FIND AMAZING PRODUCTS BELOW</h1>
@@ -42,6 +47,8 @@ const Home = () =>  {
                 <ProductCard  product={products}/>
               </div>
         </Fragment>
+       
+
       ); 
 }
 

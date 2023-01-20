@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { Rating } from "@mui/material";
+
+
+
 const options = {
   edit : false,
   size: window.innerWidth < 600 ? 20 : 25,
