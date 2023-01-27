@@ -3,10 +3,10 @@ import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
-import { Typography } from "@mui/icons-material";
+import {  Typography } from "@mui/material";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../layout/Loader/Loader";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const OrderDetails = ({ match }) => {

@@ -10,7 +10,7 @@ import {
 } from "../../actions/orderAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import { Button } from "@mui/material";

@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct } from "../../actions/productAction";
 import { getAllOrders } from "../../actions/orderAction.js";
 import { getAllUsers } from "../../actions/userAction.js";
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+// import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import MetaData from "../layout/MetaData";
 
 const Dashboard = () => {

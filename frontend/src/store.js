@@ -1,61 +1,72 @@
-// import { combineReducers, applyMiddleware} from "redux";
-// import {configureStore} from "@reduxjs/toolkit"
-//  import thunk from "redux-thunk";
-
-//  import {composeWithDevTools} from "redux-devtools-extension";
-//  import {productReducer} from "./reducers/productReducer";
-
-//  const reducer = combineReducers({
-//     products: productReducer,
-  
-// })
-//     let initialState = {};
-
-//     const  middleware = [thunk];
-
-//     // const store = configureStore(
-//     //     reducer,
-//     //     initialState,
-//     //     composeWithDevTools(applyMiddleware(...middleware))
-        
-//     // );
-
-//     const store = () => {
-       
-//         return configureStore(
-//          reducer,
-//          initialState,
-//          composeWithDevTools(applyMiddleware(...middleware))
-//         )
-//        }
-
-//     export default store;
-
-
-import {combineReducers, configureStore} from "@reduxjs/toolkit"
+import {  applyMiddleware } from "redux";
+import {configureStore,combineReducers} from '@reduxjs/toolkit';
 import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import {
+  newProductReducer,
+  newReviewReducer,
+  productDetailsReducer,
+  productReducer,
+  productReviewsReducer,
+  productsReducer,
+  reviewReducer,
+} from "./reducers/productReducer";
 
-import {routerMiddleware} from 'react-router-redux';
-import createSagaMiddleware from 'redux-saga';
-import {productReducer} from "./reducers/productReducer"
+import {
+  allUsersReducer,
+  forgotPasswordReducer,
+  profileReducer,
+  userDetailsReducer,
+  userReducer,
+} from "./reducers/userReducer";
+
+import { cartReducer } from "./reducers/cartReducer";
+import {
+  allOrdersReducer,
+  myOrdersReducer,
+  newOrderReducer,
+  orderDetailsReducer,
+  orderReducer,
+} from "./reducers/orderReducer";
 
 const reducer = combineReducers({
-    products: productReducer,
-})
-const sagaMiddleware = createSagaMiddleware();
+  products: productsReducer,
+  productDetails: productDetailsReducer,
+  user: userReducer,
+  profile: profileReducer,
+  forgotPassword: forgotPasswordReducer,
+  cart: cartReducer,
+  newOrder: newOrderReducer,
+  myOrders: myOrdersReducer,
+  orderDetails: orderDetailsReducer,
+  newReview: newReviewReducer,
+  newProduct: newProductReducer,
+  product: productReducer,
+  allOrders: allOrdersReducer,
+  order: orderReducer,
+  allUsers: allUsersReducer,
+  userDetails: userDetailsReducer,
+  productReviews: productReviewsReducer,
+  review: reviewReducer,
+});
 
-export default function createStore(initialState = {}, history) {
-    // Create the store with two middlewares
-    // 1. sagaMiddleware: Makes redux-sagas work
-    // 2. routerMiddleware: Syncs the location/URL path to the state
-    const middlewares = [thunk,sagaMiddleware, routerMiddleware(history)];
-    const store= configureStore({
-        reducer:reducer
-      });
-      
-    // Extensions
-    store.runSaga = sagaMiddleware.run;
-    store.asyncReducers = {}; // Async reducer registry
+let initialState = {
+  cart: {
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : [],
+    shippingInfo: localStorage.getItem("shippingInfo")
+      ? JSON.parse(localStorage.getItem("shippingInfo"))
+      : {},
+  },
+};
 
-    return store;
-}
+const middleware = [thunk];
+
+const store = configureStore(
+  reducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
+
+export default store;

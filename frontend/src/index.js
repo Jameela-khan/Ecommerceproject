@@ -66,5 +66,6 @@ const renderApp = Component => {
     rootElement
   );
 };
+renderApp();
 reportWebVitals();
 

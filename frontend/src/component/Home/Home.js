@@ -1,7 +1,6 @@
 import React, { Fragment} from "react";
 import "./Home.css";
-import MetaData from "../layout/MetaDeta";
-
+import MetaData from "../layout/MetaData";
 import ProductCard from "./ProductCard.js";
 
 

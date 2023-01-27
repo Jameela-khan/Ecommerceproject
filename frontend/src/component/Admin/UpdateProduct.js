@@ -5,7 +5,7 @@ import {
   updateProduct,
   getProductDetails,
 } from "../../actions/productAction";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";

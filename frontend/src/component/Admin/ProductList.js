@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { DataGrid } from "@mui/material/data-grid";
+import { DataGrid } from '@mui/x-data-grid'
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,7 +8,7 @@ import {
   deleteProduct,
 } from "../../actions/productAction";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
