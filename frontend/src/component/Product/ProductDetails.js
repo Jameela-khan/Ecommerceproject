@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Carousel from "react-material-ui-carousel";
+import {Carousel} from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,7 +9,8 @@ import {
 } from "../../actions/productAction";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
-import { useAlert } from "react-alert";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MetaData from "../layout/MetaData";
 import { addItemsToCart } from "../../actions/cartAction";
 import {
@@ -18,13 +19,13 @@ import {
   DialogContent,
   DialogTitle,
   Button,
-} from "@material-ui/core";
-import { Rating } from "@material-ui/lab";
+} from "@mui/material";
+import { Rating } from "@mui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
-  const alert = useAlert();
+  const alert = toast();
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails

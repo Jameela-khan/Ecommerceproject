@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid } from "@mui/material/data-grid";
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,18 +8,19 @@ import {
   deleteProduct,
 } from "../../actions/productAction";
 import { Link } from "react-router-dom";
-import { useAlert } from "react-alert";
-import { Button } from "@material-ui/core";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import SideBar from "./Sidebar";
 import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 
 const ProductList = ({ history }) => {
   const dispatch = useDispatch();
 
-  const alert = useAlert();
+  const alert = toast();
 
   const { error, products } = useSelector((state) => state.products);
 

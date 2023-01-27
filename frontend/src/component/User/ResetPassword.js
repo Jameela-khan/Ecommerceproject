@@ -3,14 +3,15 @@ import "./ResetPassword.css";
 import Loader from "../layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, resetPassword } from "../../actions/userAction";
-import { useAlert } from "react-alert";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MetaData from "../layout/MetaData";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import LockIcon from "@material-ui/icons/Lock";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+import LockIcon from "@mui/icons-material/Lock";
 
 const ResetPassword = ({ history, match }) => {
   const dispatch = useDispatch();
-  const alert = useAlert();
+  const alert = toast();
 
   const { error, success, loading } = useSelector(
     (state) => state.forgotPassword

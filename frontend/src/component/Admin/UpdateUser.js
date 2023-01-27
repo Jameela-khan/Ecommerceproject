@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useAlert } from "react-alert";
-import { Button } from "@material-ui/core";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import PersonIcon from "@material-ui/icons/Person";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PersonIcon from "@mui/icons-material/Person";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import SideBar from "./Sidebar";
 import { UPDATE_USER_RESET } from "../../constants/userConstants";
 import {
@@ -17,7 +18,7 @@ import Loader from "../layout/Loader/Loader";
 
 const UpdateUser = ({ history, match }) => {
   const dispatch = useDispatch();
-  const alert = useAlert();
+  const alert = toast();
 
   const { loading, error, user } = useSelector((state) => state.userDetails);
 
