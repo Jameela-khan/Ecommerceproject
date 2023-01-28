@@ -43,29 +43,18 @@ import reportWebVitals from './reportWebVitals';
 //   document.getElementById("root")
 // );
 // reportWebVitals();
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './App'
+import configureStore from './store'
 
- import React from "react";
- import ReactDOM from "react-dom";
-import App from "./App";
-// import store from "./store";
-//import registerServiceWorker from './registerServiceWorker';
-import { HashRouter } from 'react-router-dom';
-import configureStore from './store';
-import { Provider } from 'react-redux';
+const store = configureStore()
 
-const store = configureStore();
-const rootElement = document.getElementById('root');
-
-const renderApp = Component => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HashRouter>
-        <App/>
-      </HashRouter>
-    </Provider>,
-    rootElement
-  );
-};
-renderApp();
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
 reportWebVitals();
-
