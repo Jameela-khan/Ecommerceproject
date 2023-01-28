@@ -5,7 +5,7 @@ import {
   updateProduct,
   getProductDetails,
 } from "../../actions/productAction";
-import { toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -225,6 +225,7 @@ const UpdateProduct = ({ history, match }) => {
               type="submit"
               disabled={loading ? true : false}
             >
+                <ToastContainer />
               Create
             </Button>
           </form>

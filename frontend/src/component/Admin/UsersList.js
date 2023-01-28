@@ -3,7 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import "./productList.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -98,6 +98,7 @@ const UsersList = ({ history }) => {
                 deleteUserHandler(params.getValue(params.id, "id"))
               }
             >
+                <ToastContainer />
               <DeleteIcon />
             </Button>
           </Fragment>

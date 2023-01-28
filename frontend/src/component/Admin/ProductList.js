@@ -8,7 +8,7 @@ import {
   deleteProduct,
 } from "../../actions/productAction";
 import { Link } from "react-router-dom";
-import {toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -96,7 +96,9 @@ const ProductList = ({ history }) => {
                 deleteProductHandler(params.getValue(params.id, "id"))
               }
             >
+
               <DeleteIcon />
+              <ToastContainer />
             </Button>
           </Fragment>
         );

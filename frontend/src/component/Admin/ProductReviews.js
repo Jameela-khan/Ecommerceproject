@@ -7,7 +7,7 @@ import {
   getAllReviews,
   deleteReviews,
 } from "../../actions/productAction";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -159,6 +159,7 @@ const ProductReviews = ({ history }) => {
                 loading ? true : false || productId === "" ? true : false
               }
             >
+                <ToastContainer />
               Search
             </Button>
           </form>

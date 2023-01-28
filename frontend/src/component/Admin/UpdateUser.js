@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -123,6 +123,7 @@ const UpdateUser = ({ history, match }) => {
                   updateLoading ? true : false || role === "" ? true : false
                 }
               >
+                  <ToastContainer />
                 Update
               </Button>
             </form>

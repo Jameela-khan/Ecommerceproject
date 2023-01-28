@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./newProduct.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, createProduct } from "../../actions/productAction";
-import {toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@mui/material";
 import MetaData from "../layout/MetaData";
@@ -176,6 +176,7 @@ const NewProduct = ({ history }) => {
               type="submit"
               disabled={loading ? true : false}
             >
+                <ToastContainer />
               Create
             </Button>
           </form>
