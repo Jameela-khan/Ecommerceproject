@@ -5,10 +5,10 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
-import Slider from "@material-ui/core/Slider";
+import Slider from "@mui/material/Slider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 import MetaData from "../layout/MetaData";
 
 const categories = [

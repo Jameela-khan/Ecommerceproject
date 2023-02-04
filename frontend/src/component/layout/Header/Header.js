@@ -1,52 +1,45 @@
 import React from "react";
 import "./Header.css";
-import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo2.png";
+// import { ReactNavbar } from "overlay-navbar";
+import Logo from "../../../images/logo4.jpg";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const options = {
-  burgerColor: "red",
-  burgerColorHover: "#eb4034",
-  logo,
-  logoWidth: "15vmax",
-  logoHeight: "14vmax",
-  navColor1: "white",
-  logoHoverSize: "10px",
-  logoHoverColor: "#eb4034",
-  link1Text: "Home",
-  link2Text: "Product",
-  link3Text: "Contact",
-  link4Text: "About",
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
-  link1Size: "1.3vmax",
-  link1Color: "rgba(35, 35, 35,0.8)",
-  nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
-  nav3justifyContent: "flex-start",
-  nav4justifyContent: "flex-start",
-  link1ColorHover: "#eb4034",
-  link1Margin: "1vmax",
-  profileIconUrl: "/login",
-  profileIconColor: "black",
-  // searchIcon : true,
-  searchIconUrl : "/search",
-  searchIconSize :	"2vmax",
-  cartIconUrl : "/cart",
-  cartIconSize :	"2vmax",
-  profileIconSize:	"2.5vmax",
-  searchIconColor: "black",
-  // cartIcon : true,
-  cartIconColor: "black",
-  profileIconColorHover: "#eb4034",
-  searchIconColorHover: "#eb4034",
-  cartIconColorHover: "#eb4034",
-  cartIconMargin: "1vmax",
-};
+
+
 
 const Header = () => {
-  return <ReactNavbar {...options} />;
+  return (
+    <>
+  <Navbar bg="dark" variant="dark" expand="lg">
+    <Container>
+      <Navbar.Brand href="/">
+      <img
+              src={Logo}
+              width="100"
+              height="60"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="ms-auto">
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/about">About</Nav.Link>
+        <Nav.Link href="/products">Product</Nav.Link>
+        <Nav.Link href="/contact">Contact</Nav.Link>
+        <Nav.Link href="/login"><i class="fa-solid fa-user"></i></Nav.Link>
+        <Nav.Link href="/Search"><i class="fa-solid fa-magnifying-glass"></i></Nav.Link>
+        <Nav.Link href="/cart"><i class="fa-solid fa-cart-shopping"></i></Nav.Link>
+      </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+  </>
+  )
 };
 
 
