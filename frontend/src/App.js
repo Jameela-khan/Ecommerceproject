@@ -140,28 +140,28 @@ function App() {
       )}
 <Routes>
     
-        <Route exact path="/" component={Home} />
-        <Route exact path="/product/:id" component={ProductDetails} />
-        <Route exact path="/products" component={Products} />
-        <Route path="/products/:keyword" component={Products} />
+        <Route exact path="/" element={< Home />} component={Home} />
+        <Route exact path="/product/:id" element={< ProductDetails/>} component={ProductDetails} />
+        <Route exact path="/products" element={< Products />} component={Products} />
+        <Route path="/products/:keyword" element={< Products />} component={Products} />
 
-        <Route exact path="/search" component={Search} />
+        <Route exact path="/search" element={< Search />} component={Search} />
 
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/contact" element={< Contact/>} component={Contact} />
 
-        <Route exact path="/about" component={About} />
+        <Route exact path="/about" element={< About/>} component={About} />
         <Route exact path="/account" element={<ProtectedRoute Component={Profile}/>} />
         <Route exact path="/me/update" element={<ProtectedRoute Component={UpdateProfile}/>} />
 
         <Route exact path="/password/update" element={<ProtectedRoute Component={UpdatePassword}/>} />
 
-        <Route exact path="/password/forgot" component={ForgotPassword} />
+        <Route exact path="/password/forgot" element={< ForgotPassword />} component={ForgotPassword} />
 
-        <Route exact path="/password/reset/:token" component={ResetPassword} />
+        <Route exact path="/password/reset/:token" element={<ResetPassword />} component={ResetPassword} />
 
-        <Route exact path="/login" component={LoginSignUp} />
+        <Route exact path="/login" element={< LoginSignUp/>} component={LoginSignUp} />
 
-        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/cart" element={< Cart />} component={Cart} />
         <Route exact path="/shipping" element={<ProtectedRoute Component={Shipping}/>} />
         <Route exact path="/success" element={<ProtectedRoute Component={OrderSuccess}/>} />
         <Route exact path="/orders" element={<ProtectedRoute Component={MyOrders}/>} />

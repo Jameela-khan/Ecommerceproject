@@ -59,14 +59,13 @@ import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../layout/Loader/Loader";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const alert = toast();
   const dispatch = useDispatch();
-  const { loading, error, products } = useSelector((state) => state.products);
+  const { error, products } = useSelector((state) => state.products);
 
   useEffect(() => {
     if (error) {
@@ -77,10 +76,7 @@ const Home = () => {
   }, [dispatch, error, alert]);
 
   return (
-    <Fragment>
-      {loading ? (
-        <Loader />
-      ) : (
+   
         <Fragment>
           <MetaData title="ECOMMERCE" />
 
@@ -104,8 +100,8 @@ const Home = () => {
               ))}
           </div>
         </Fragment>
-      )}
-    </Fragment>
+     
+   
   );
 };
 
